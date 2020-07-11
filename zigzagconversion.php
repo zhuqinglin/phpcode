@@ -27,8 +27,6 @@ function convert($s, $numRows) {
 
         if ($index == 0 || $index == $numRows - 1) {
             $dir = -$dir;
-//            echo $dir . "\n";
-
         }
 
     }
