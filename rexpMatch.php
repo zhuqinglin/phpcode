@@ -17,6 +17,8 @@ function isMatch($s, $p) {
         }
     }
 
+    $arr[0][0] = true;
+
     for ($i = 0; $i <= $m; ++$i) {
         for ($j = 1; $j <= $n; ++$j) {
             if ($p[$j - 1] == '*') {
