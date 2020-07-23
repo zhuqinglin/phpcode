@@ -19,10 +19,14 @@ function isMatch($s, $p) {
 
     $arr[0][0] = true;
 
+    // ###b
+    // ###b*
+
     for ($i = 0; $i <= $m; ++$i) {
         for ($j = 1; $j <= $n; ++$j) {
             if ($p[$j - 1] == '*') {
                 $arr[$i][$j] = $arr[$i][$j - 2];
+
                 if (matches($s, $p, $i, $j - 1)) {
                     $arr[$i][$j] = $arr[$i][$j] || $arr[$i - 1][$j];
                 }
@@ -52,3 +56,9 @@ function matches($s, $p, $i, $j) {
 
 
 }
+
+$a = '###b';
+$b = '###b*';
+
+
+isMatch($a, $b);
