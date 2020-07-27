@@ -40,7 +40,6 @@ function threeSum($nums) {
             if ($sum === 0) {
                 array_push($res, [$value, $nums[$l], $nums[$r]]);
 
-
                 // 去重操作
                 while ($l < $r && $nums[$l] === $nums[$l + 1]) {
                     $l++;
