@@ -19,3 +19,4 @@ function fibonacciSequence($n) {
 }
 
 echo fibonacciSequence(3) . "\n";
+
