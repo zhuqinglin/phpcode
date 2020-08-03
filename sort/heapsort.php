@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: momo
- * Date: 2020/8/2
- * Time: 6:28 PM
- */
+<?php$input = [11,2,18,3,5,4,10,9];heapSort($input);/** * @param $arr */function heapSort($arr) {    $count = count($arr);    for ($i = ($count / 2) - 1; $i >= 0; $i--) {        adjHeap($arr, $i, $count);    }    for ($j = $count - 1; $j > 0; $j--) {        swap($arr, 0, $j);        adjHeap($arr, 0, $j);    }}/** * @param $arr * @param $i * @param $count */function adjHeap(&$arr, $i, $count) {    $test = 0;    $temp = $arr[$i];    for ($k = $i * 2 + 1; $k < $count; $k=$k * 2 + 1) {        if ($k+1 < $count && $arr[$k] < $arr[$k + 1]) {            $k++;        }        if ($arr[$k] > $temp) {            $arr[$i] = $arr[$k];            $i = $k;        } else {            break;        }    }    $arr[$i] = $temp;}/** * @param $arr * @param $a * @param $b */function swap(&$arr, $a, $b) {    $temp = $arr[$a];    $arr[$a] = $arr[$b];    $arr[$b] = $temp;}
