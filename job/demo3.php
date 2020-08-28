@@ -24,3 +24,10 @@ foreach ($arr as $key => $value) {
 
 print_r($arr);die;
 
+
+//$test = new Redis();
+//
+//$test->connect('localhost');
+//
+//$test->set('test', 123, ['ex'=>10]);
+
