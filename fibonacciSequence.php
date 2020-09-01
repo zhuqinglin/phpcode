@@ -16,9 +16,9 @@ function fibonacciSequence($n) {
     return fibonacciSequence($n - 1) + fibonacciSequence($n - 2);
 }
 
-echo fibonacciSequence(1) . "\n";
+//echo fibonacciSequence(1) . "\n";
 
-// 动态规划版
+// 动态规划版一
 function dpFib($n) {
 
     if ($n < 1) {
@@ -30,9 +30,7 @@ function dpFib($n) {
         $memo[$i] = 0;
     }
 
-    helper($memo, $n);
-
-    print_r($memo);die;
+    echo helper($memo, $n);
 
 }
 
@@ -50,6 +48,27 @@ function helper(&$memo, $n) {
     $memo[$n] = helper($memo, $n - 1) + helper($memo, $n - 2);
 
     return $memo[$n];
+
+}
+
+//dpFib(3);
+
+
+
+// 动态规划版二
+function dpFib2($n) {
+
+    for ($i = 0; $i <= $n; $i++) {
+        $dp[$i] = 0;
+    }
+
+    $dp[1] = $dp[2] = 1;
+
+    for ($i = 3; $i <= $n; $i++) {
+        $dp[$i] = $dp[$i - 1] + $dp[$i - 2];
+    }
+
+    return $dp[$n];
 
 }
 
