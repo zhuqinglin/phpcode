@@ -32,11 +32,84 @@
 //$test->set('test', 123, ['ex'=>10]);
 
 
-$a = 0;
+//$a = 0;
+//
+//for ($i = $a * 10; $i < 5; $i++) {
+//    $a = 10;
+//
+//    echo 1 . "\n";
+//}
 
-for ($i = $a * 10; $i < 5; $i++) {
-    $a = 10;
+function binarySearch($nums, $target) {
+    $left = 0;
+    $right = count($nums) - 1;
 
-    echo 1 . "\n";
+    while ($left <= $right) {
+        $mid = floor(($left + $right) / 2);
+
+        if ($nums[$mid] == $target) {
+            return $mid;
+        } else if ($nums[$mid] < $target) {
+            $left = $mid + 1;
+        } else if ($nums[$mid] > $target) {
+            $right = $mid - 1;
+        }
+    }
+
+    return -1;
 }
+
+function left_round($nums, $target) {
+    $left = 0;
+    $right = count($nums) - 1;
+
+    while ($left <= $right) {
+        $mid = floor(($left + $right) / 2);
+
+        if ($nums[$mid] == $target) {
+            $right = $mid - 1;
+        } else if ($nums[$mid] < $target) {
+            $left = $mid + 1;
+        } else if ($nums[$mid] > $target) {
+            $right = $mid - 1;
+        }
+    }
+
+    if ($left == count($nums)) return -1;
+
+    return $nums[$left] == $target ? $left : -1;
+}
+
+$nums = [1, 3, 3, 3, 5];
+
+$target = 3;
+
+echo binarySearch($nums, $target) . PHP_EOL;
+
+echo left_round($nums, $target) . PHP_EOL;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

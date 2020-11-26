@@ -22,8 +22,41 @@ function permutation($arr, $str) {
 
 
 
-$arr = [1, 2, 3, 4];
+$arr = [1, 2, 3];
 
-print_r(array_slice($arr, 1));
+//print_r(array_slice($arr, 1));
 
-//permutation($arr, '');
+
+function premu($nums) {
+    $track = [];
+    $res = [];
+
+    backtrack($nums, $track, $res);
+
+    print_r($res);
+
+
+}
+
+function backtrack($nums, &$track, &$res) {
+
+    if (count($track) == count($nums)) {
+        $res[] = $track;
+    }
+
+    foreach ($nums as $num) {
+        if (in_array($num, $track)) {
+            continue;
+        }
+        $track[$num] = $num;
+        backtrack($nums, $track, $res);
+
+        unset($track[$num]);
+
+    }
+
+}
+
+premu($arr);
+
+
