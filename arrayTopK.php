@@ -44,7 +44,7 @@ function topKFrequent($nums, $k) {
         }
     }
 
-    print_r($res);
+    return $res;
 }
 
 $nums = [1];
