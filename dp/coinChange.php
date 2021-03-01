@@ -53,5 +53,5 @@ function dp($coins, $amount, &$memo) {
 }
 
 $coins = [1, 2, 5];
-$amount = 6;
+$amount = 11;
 coinChange($coins, $amount);
