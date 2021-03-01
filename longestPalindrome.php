@@ -26,7 +26,7 @@ function longestPalindrome($s) {
         for ($i = 0; $i < $j; $i++) {
 
             if ($s[$i] == $s[$j]) {
-                if ($j - $i < 3) {
+                if ($j - $i <= 2) {
                     $arr[$i][$j] = true;
                 } else {
                     $arr[$i][$j] = $arr[$i + 1][$j - 1];
