@@ -50,9 +50,14 @@ class Solution {
     }
 }
 
-$left  = new TreeNode(4);
-$right = new TreeNode(2);
+$left1 = new TreeNode(4);
+$right1 = new TreeNode(5);
+
+$left  = new TreeNode(2, $left1, $right1);
+$right = new TreeNode(3);
+
 $root  = new TreeNode(1, $left, $right);
+
 
 $class = new Solution();
 
